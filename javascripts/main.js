@@ -1,6 +1,6 @@
 'use strict';
-var app = angular.module('app', [ 'input-usphone' ]);
+var app = angular.module('app', [ 'input-ssn' ]);
 
 app.controller('MainCtrl', function ($scope) {
-	$scope.number = 5558675309;
+	$scope.ssn = 123456789;
 });

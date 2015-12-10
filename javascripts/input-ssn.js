@@ -1,19 +1,19 @@
 'use strict';
 
-angular.module('input-usphone', [])
-  .directive('phone', function () {
-    function makePhoneNumber (value) {
+angular.module('input-ssn', [])
+  .directive('ssn', function () {
+    function makeSsn (value) {
       var result = value;
 
-      var phone = value ? value.toString() : '';
-      if (phone.length > 3) {
-        result = '(' + phone.substr(0, 3) + ') ';
-        if (phone.length > 6) {
-          result += phone.substr(3, 3) + '-';
-          result += phone.substr(6, 4);
+      var ssn = value ? value.toString() : '';
+      if (ssn.length > 3) {
+        result = ssn.substr(0, 3) + '-';
+        if (ssn.length > 5) {
+          result += ssn.substr(3, 2) + '-';
+          result += ssn.substr(5, 4);
         }
         else {
-          result += phone.substr(3);
+          result += ssn.substr(3);
         }
       }
 
@@ -25,7 +25,7 @@ angular.module('input-usphone', [])
       require: 'ngModel',
       link: function (scope, element, attrs, ngModel) {
         ngModel.$formatters.push(function (value) {
-          return makePhoneNumber(value);
+          return makeSsn(value);
         });
 
         // clean output as digits
@@ -34,10 +34,10 @@ angular.module('input-usphone', [])
           var oldLength = value.toString().length;
           var nonDigits = /[^0-9]/g;
           var intValue = value.replace(nonDigits, '');
-          if (intValue.length > 10) {
-            intValue = intValue.substr(0, 10);
+          if (intValue.length > 9) {
+            intValue = intValue.substr(0, 9);
           }
-          var newValue = makePhoneNumber(intValue);
+          var newValue = makeSsn(intValue);
           ngModel.$setViewValue(newValue);
           ngModel.$render();
           element[0].setSelectionRange(cursorPosition + newValue.length - oldLength, cursorPosition + newValue.length - oldLength);
