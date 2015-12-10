@@ -1,17 +1,16 @@
 {
-  "name": "angular-input-usphone",
-  "version": "0.0.1",
-  "homepage": "http://deltreey.github.io/angular-input-usphone/",
+  "name": "angular-input-ssn",
+  "version": "0.0.2",
+  "homepage": "http://deltreey.github.io/angular-input-ssn/",
   "authors": [
     "deltreey <suicidolt@gmail.com>"
   ],
-  "description": "Add this attribute to your input element to make it display as a phone number.",
-  "main": "input-usphone.js",
+  "description": "Add this attribute to your input element to make it display as a social security number.",
+  "main": "input-ssn.js",
   "keywords": [
-    "angular-input-usphone",
-    "phone",
-    "tel",
-    "input-usphone"
+    "angular-input-ssn",
+    "ssn",
+    "input-ssn"
   ],
   "license": "MIT",
   "ignore": [
